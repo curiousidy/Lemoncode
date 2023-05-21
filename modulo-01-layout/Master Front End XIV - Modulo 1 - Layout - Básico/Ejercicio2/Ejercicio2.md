@@ -16,6 +16,5 @@
 
 # Extensión utilizada en vs code
     Live Sass Compiler
-
 # Problemas encontrados en esta actividad:
     Cuando se realiza un cambio en las variables globales o en los archivos de color rojo o azul, además de guardar los archivos anteriores, hay que guardar también el archivo base.scss para que los cambios se visualicen.
