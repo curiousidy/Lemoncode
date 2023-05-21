@@ -1,0 +1,35 @@
+@import "./color_blue.scss";
+
+.box{
+    display: flex;
+    width: 150px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.base{
+    background-color: $primary_color;
+}
+
+.import{
+    background-color: $important;
+}
+
+.warning{
+    background-color: $warning;
+}
+
+.principal{
+    font-family: $principal_font;
+}
+
+.secondary{
+    font-family: $secondary_font;
+}
+
+.shadow{
+    border: $border;
+    border-radius: $border_radius;
+    box-shadow: $box_shadow;
+}

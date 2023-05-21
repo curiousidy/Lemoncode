@@ -1,0 +1,17 @@
+@import "./global_variable.scss";
+
+//color
+$primary_color: blue;
+$important: darken($primary_color,$increment);
+$warning: lighten($primary_color,$increment);
+
+//font
+$principal_font: 'Times New Roman', Times, serif;
+$secondary_font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+//border radius
+$border_color_blue: $border;
+$border_radius_color_blue: $border_radius;
+
+//shadow box
+$box_shadow: 5px 10px #888888;
