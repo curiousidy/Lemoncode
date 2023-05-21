@@ -1,0 +1,57 @@
+body {
+  background-color: aquamarine;
+}
+
+.container-1 {
+  display: flex;
+}
+
+.box {
+  height: 80px;
+  margin: 0 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-box-text {
+  padding: 0 5px;
+  color: ghostwhite;
+}
+
+.darken-1 {
+  background-color: #cc0000;
+}
+
+.lighten-1 {
+  background-color: #ff3333;
+}
+
+.darken-2 {
+  background-color: #990000;
+}
+
+.lighten-2 {
+  background-color: #ff6666;
+}
+
+.darken-3 {
+  background-color: #660000;
+}
+
+.lighten-3 {
+  background-color: #ff9999;
+}
+
+.darken-4 {
+  background-color: #330000;
+}
+
+.lighten-4 {
+  background-color: #ffcccc;
+}
+
+.base-color {
+  background-color: rgb(255, 0, 0);
+}/*# sourceMappingURL=mystyle.css.map */

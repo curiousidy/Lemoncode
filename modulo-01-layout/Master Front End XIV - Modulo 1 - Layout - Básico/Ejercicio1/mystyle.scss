@@ -1,0 +1,36 @@
+$base-color:rgb(255, 0, 0);
+
+body {
+    background-color: aquamarine;
+}
+
+.container-1{
+    display: flex;
+}
+
+.box{
+    height: 80px;
+    margin: 0 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-box-text{
+    padding: 0 5px;
+    color: ghostwhite;
+}
+
+@for $i from 1 through 4{
+    .darken-#{$i}{
+        background-color: darken($base-color, 10% * $i);
+
+    }
+    .lighten-#{$i}{
+        background-color: lighten($base-color, 10% * $i);
+    }
+}
+
+.base-color{background-color: $base-color}
+

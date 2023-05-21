@@ -1,0 +1,57 @@
+body{
+    background-color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.card{
+    width: 320px;
+    background-color: white;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: 
+        "images      images      images"
+        "title       title       title"
+        "description description description"
+        ".           published   date"
+        "button      button      button";
+    gap: 5px;
+
+}
+
+img{
+    width: 100%;
+    grid-area: images;
+}
+
+.title{
+    font-size: x-large;
+    margin: 10px;
+    grid-area: title;
+}
+
+.description{
+    margin: 0 10px;
+    grid-area: description;
+}
+
+.published{
+    text-align: end;
+    font-size: smaller;
+    font-weight: bold;
+    grid-area: published;
+}
+
+.date{
+    margin-right: 10px;
+    color: rgb(26, 161, 78);
+    font-size: smaller;
+    grid-area: date;
+}
+
+button{
+    background-color: rgb(26, 161, 78);
+    border: none;
+    color: white;
+    margin: 10px;
+    height: 60px;
+    grid-area: button;
+}
