@@ -10,12 +10,14 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
-//   build: {
-//     outDir: 'dist',
-//     rollupOptions: {
-//       output: {
-//         assetFileNames: '[name]-[hash][ext]',
-//       },
-//     },
-//   },
+  build: {
+    // outDir: 'turboBundle',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        chunkFileNames:'chunks/[name]-[hash].js',
+        entryFileNames:'js/[name]-[hash].js'
+      },
+    },
+  },
 });
