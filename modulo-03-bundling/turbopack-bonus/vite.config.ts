@@ -11,7 +11,6 @@ export default defineConfig({
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   build: {
-    // outDir: 'turboBundle',
     rollupOptions: {
       output: {
         assetFileNames: 'assets/[name]-[hash].[ext]',
