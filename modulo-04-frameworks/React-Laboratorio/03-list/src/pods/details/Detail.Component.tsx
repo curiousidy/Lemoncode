@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 
-export const DetailPage: React.FC = () => {
+export const DetailComponent: React.FC = () => {
   const {id} = useParams();
 
   return (

@@ -1,8 +1,9 @@
 import React from 'react'
+import LoginContainer from '../pods/login/Login.Container'
 
 const LoginScene = () => {
   return (
-    <div></div>
+    <LoginContainer/>
   )
 }
 

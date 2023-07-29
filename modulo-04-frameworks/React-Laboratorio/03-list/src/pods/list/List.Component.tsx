@@ -7,7 +7,7 @@ interface MemberEntity {
   avatar_url: string;
 }
 
-export const ListPage: React.FC = () => {
+export const ListComponent: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
   // React.useEffect(() => {

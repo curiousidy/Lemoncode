@@ -1,9 +1,6 @@
 import React from 'react'
+import ListContainer from '../pods/list/List.Container'
 
-const ListScene = () => {
-  return (
-    <div>List.scene</div>
-  )
-}
+const ListScene = () => <ListContainer/>
 
 export default ListScene

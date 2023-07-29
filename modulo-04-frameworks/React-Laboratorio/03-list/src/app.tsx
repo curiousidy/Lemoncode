@@ -1,8 +1,8 @@
 import React from "react";
-import AppRoutes from "./core/router/Routes";
+import RoutesComponent from "./core/router/Routes.Component";
 
 export const App = () => {
   return (
-    <AppRoutes/>
+    <RoutesComponent/>
   );
 };

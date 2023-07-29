@@ -1,9 +1,6 @@
 import React from 'react'
+import DetailContainer from '../pods/details/Detail.Container'
 
-const DetailsScene = () => {
-  return (
-    <div>Details.scene</div>
-  )
-}
+const DetailsScene = () => <DetailContainer/>
 
 export default DetailsScene
