@@ -1,0 +1,34 @@
+import React, { FC, useReducer } from 'react'
+import OrganizationContext, { OrganizationInterface } from './OrganizationContext';
+import { organizationReducer } from './OrganizationReducer';
+interface Props {
+    children: JSX.Element;
+}
+const OrganizationProvider:FC<Props> = ({children}) => {
+  const initValue:OrganizationInterface = {
+    organizationName:'lemoncode',
+    members:[]
+  }
+  const [state, dispatch] = useReducer(organizationReducer, initValue)
+  
+  const updateOrganization = (organization:OrganizationInterface) => {
+    dispatch({type:'update',payload:organization})
+    console.log('update holi')
+  }
+
+  const updateOrganizationName = (organizationName:string) => {
+    dispatch({type:'changeName',payload:organizationName})
+  }
+
+  return (
+    <OrganizationContext.Provider value={{
+      organization:state,
+      updateOrganization,
+      updateOrganizationName
+    }}>
+        {children}
+    </OrganizationContext.Provider>
+  )
+}
+
+export default OrganizationProvider
