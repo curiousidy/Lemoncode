@@ -4,36 +4,66 @@
       Hello from List page 
     </h2>
     
+    <input v-model="organizationName" @change="handleInputUpdate" placeholder="edit me" />
+    <button @click="searchUsers">Search</button>
+
     <div class="list-user-list-container">
-      <span class="list-header">Avatar</span>
-      <span class="list-header">Id</span>
-      <span class="list-header">Name</span>
-      <div v-for="member in organization.members" :key="member.id">
+      <div class="list-header">
+        <span>Avatar</span>
+        <span>Id</span>
+        <span>Name</span>
+      </div>
+
+      <div v-for="member in membersStore.members" :key="member.id" class="member-row">
         <img :src="member.avatar_url" />
         <span>{{ member.id }}</span>
-        <router-link :to="`/detail/${member.login}`">{{ member.login }}</router-link>
+        <NuxtLink :to="`/member/${member.id}`">{{ member.login }}</NuxtLink>
       </div>
     </div>
-    <router-link to="/detail">Navigate to detail page</router-link>
   </div>
 </template>
 
 <script setup lang='ts'>
     import { loadMembers } from '../services/members'
-    const members = await loadMembers.get();
-    console.log(members);
+    import { ref } from 'vue'
+    import { MemberEntity } from 'types';
+    import { useMembersStore } from '../composable/membersStore'
+
+    
+    const membersStore = useMembersStore();
+    const organizationName = ref(membersStore.organizationName);
+    const members = ref<MemberEntity[]>(membersStore.members); 
+
+    const handleInputUpdate = (event: Event) => {
+        const newName = (event.target as HTMLInputElement).value;
+        membersStore.updateOrganizationName(newName);
+    };
+
+    const searchUsers = async() => {
+      membersStore.loadMembers(await loadMembers.get(membersStore.organizationName));
+    }
 </script>
 
 <style lang='css' scoped>
     .list-user-list-container {
         display: grid;
-        grid-template-columns: 80px 1fr 3fr;
-        grid-template-rows: 20px;
+        grid-gap: 10px 5px;
+    }
+
+    .list-user-list-container .list-header {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px 5px;
+    }
+
+    .list-user-list-container .member-row {
+        display: grid;
+        grid-template-columns: auto auto auto;
         grid-auto-rows: 80px;
         grid-gap: 10px 5px;
     }
 
-    .list-user-list-container > img {
+    .list-user-list-container .member-row > img {
         width: 80px;
     }
 </style>
