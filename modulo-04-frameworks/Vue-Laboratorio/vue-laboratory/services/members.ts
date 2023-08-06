@@ -15,6 +15,7 @@ export const loadMembers = {
     async loadMember(id:string) {
         const response = await fetch(`https://api.github.com/user/${id}`);
         const member = await response.json(); 
+        console.log(member);
         return member as MemberEntity
     } 
 }

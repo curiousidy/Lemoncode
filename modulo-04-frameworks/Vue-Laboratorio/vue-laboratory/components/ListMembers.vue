@@ -6,20 +6,22 @@
     
     <input v-model="organizationName" @change="handleInputUpdate" placeholder="edit me" />
     <button @click="searchUsers">Search</button>
-
-    <div class="list-user-list-container">
-      <div class="list-header">
-        <span>Avatar</span>
-        <span>Id</span>
-        <span>Name</span>
-      </div>
-
-      <div v-for="member in membersStore.members" :key="member.id" class="member-row">
-        <img :src="member.avatar_url" />
-        <span>{{ member.id }}</span>
-        <NuxtLink :to="`/member/${member.id}`">{{ member.login }}</NuxtLink>
-      </div>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Id</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="member in membersStore.members" :key="member.id" class="member-row">
+          <td><img :src="member.avatar_url" /></td>
+          <td><span>{{ member.id }}</span></td>
+          <td><NuxtLink :to="`/member/${member.id}`">{{ member.login }}</NuxtLink></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -45,25 +47,10 @@
 </script>
 
 <style lang='css' scoped>
-    .list-user-list-container {
-        display: grid;
-        grid-gap: 10px 5px;
+    th {
+      text-align: start;
     }
-
-    .list-user-list-container .list-header {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-gap: 10px 5px;
-    }
-
-    .list-user-list-container .member-row {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-auto-rows: 80px;
-        grid-gap: 10px 5px;
-    }
-
-    .list-user-list-container .member-row > img {
+    img {
         width: 80px;
     }
 </style>
