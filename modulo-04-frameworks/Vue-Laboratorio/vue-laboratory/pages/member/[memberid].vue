@@ -19,12 +19,23 @@
 <script setup lang="ts">
     import { loadMembers } from '../../services/members'
     import { MemberEntity } from '../../types'
+    import { useMembersStore } from '../../composable/membersStore'
 
+    const membersStore = useMembersStore();
     const route = useRoute();
-    const id = route.params.memberid as string;
+    const username = route.params.memberid as string;
     const { data: memberEntity } = await useAsyncData<MemberEntity>(() =>
-        loadMembers.loadMember(id)
+      loadMembers.loadMember(username)
     )
+
+    const organizations = await useAsyncData<any>(() => 
+      loadMembers.updateMemberOrganizations (memberEntity.value?.organizations_url ?? '')
+    )
+    if(memberEntity.value?.id){
+      const id = Number(memberEntity.value?.id);
+      membersStore.updateMemberOrganizations(id,organizations.data.value)
+    }
+      console.log(membersStore.members)
 </script>
 
 <style lang='css' scoped>

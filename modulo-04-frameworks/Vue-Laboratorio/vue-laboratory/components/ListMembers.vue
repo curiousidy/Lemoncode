@@ -18,7 +18,7 @@
         <tr v-for="member in membersStore.members" :key="member.id" class="member-row">
           <td><img :src="member.avatar_url" /></td>
           <td><span>{{ member.id }}</span></td>
-          <td><NuxtLink :to="`/member/${member.id}`">{{ member.login }}</NuxtLink></td>
+          <td><NuxtLink :to="`/member/${member.login}`">{{ member.login }}</NuxtLink></td>
         </tr>
       </tbody>
     </table>
