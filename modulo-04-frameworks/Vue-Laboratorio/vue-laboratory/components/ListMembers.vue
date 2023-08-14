@@ -4,8 +4,8 @@
       Hello from List page 
     </h2>
     
-    <input v-model="organizationName" @change="handleInputUpdate" placeholder="edit me" />
-    <button @click="searchUsers">Search</button>
+    <input data-testid = "search" v-model="organizationName" @change="handleInputUpdate" placeholder="edit me" />
+    <button data-testid = "my-button" @click="searchUsers">Search</button>
     <table>
       <thead>
         <tr>
@@ -15,11 +15,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="member in membersStore.members" :key="member.id" class="member-row">
-          <td><img :src="member.avatar_url" /></td>
-          <td><span>{{ member.id }}</span></td>
-          <td><NuxtLink :to="`/member/${member.login}`">{{ member.login }}</NuxtLink></td>
-        </tr>
+        <template v-if="membersStore && membersStore.members">
+          <tr v-for="member in membersStore.members" :key="member.id" class="member-row">
+            <td><img :src="member.avatar_url" /></td>
+            <td><span>{{ member.id }}</span></td>
+            <td><NuxtLink :to="`/member/${member.login}`">{{ member.login }}</NuxtLink></td>
+          </tr>
+        </template>
       </tbody>
     </table>
   </div>
@@ -33,8 +35,8 @@
 
     
     const membersStore = useMembersStore();
-    const organizationName = ref(membersStore.organizationName);
-    const members = ref<MemberEntity[]>(membersStore.members); 
+    const organizationName = membersStore.organizationName;
+    // const members = ref<MemberEntity[]>(membersStore.members); 
 
     const handleInputUpdate = (event: Event) => {
         const newName = (event.target as HTMLInputElement).value;
