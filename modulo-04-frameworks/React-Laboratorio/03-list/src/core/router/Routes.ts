@@ -1,15 +1,22 @@
 import { generatePath } from "react-router-dom";
 
 interface SwitchRoutes {
-  root:     string;
-  list:     string;
-  details:  string;
+  root:                 string;
+  githubexample:        string;
+  list:                 string;
+  details:              string;
+  rickandmorty:         string;
+  rickandmortydetails:  string;
 }
 
 export const switchRoutes: SwitchRoutes = {
-  root:    "/",
-  list:    "/list",
-  details: "/detail/:id",
+  root:                 "/",
+  githubexample:        "/githubexample",
+  list:                 "/list",
+  details:              "/detail/:id",
+  rickandmorty:         "/rickandmorty",
+  rickandmortydetails:  "/rickandmortydetail"
+
 };
 
 interface Routes extends Omit<SwitchRoutes, "details"> {

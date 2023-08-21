@@ -1,5 +1,5 @@
 import React from 'react'
-import ListContainer from '../pods/list/List.Container'
+import ListContainer from '../../pods/Github/list/List.Container'
 
 const ListScene = () => <ListContainer/>
 
