@@ -5,7 +5,5 @@ interface Props {
 }
 
 export const OrganizationName: FC<Props> = ({name}) =>{
-    return <h2>Hello from List page
-      {name}
-    </h2>;
+    return <h2>Hello from List page {name}</h2>;
   }

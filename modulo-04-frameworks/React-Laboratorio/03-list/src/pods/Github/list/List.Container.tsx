@@ -11,17 +11,17 @@ const ListContainer = () => {
     const { organization, updateOrganization, updateOrganizationName } = useContext(OrganizationContext);
 
     const loadMembers = async () => {
-        // try {
-        //     const { data } = await axios.get(`${baseUrl}${organization.organizationName}/members`)
-        //     updateOrganization({
-        //         organizationName: organization.organizationName,
-        //         members: data
-        //     })
+        try {
+            const { data } = await axios.get(`${baseUrl}${organization.organizationName}/members`)
+            updateOrganization({
+                organizationName: organization.organizationName,
+                members: data
+            })
 
-        // } catch (error) {
-        //     console.log(error)
+        } catch (error) {
+            console.log(error)
 
-        // }
+        }
     }
 
   useEffect(() => {
