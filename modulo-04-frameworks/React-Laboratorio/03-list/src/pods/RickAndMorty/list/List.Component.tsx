@@ -48,7 +48,7 @@ const RickAndMortyListComponent: FC<Props> = ({ characters }) => {
 
               <TableRow onClick={() => navigate(switchRoutes.rickandmortydetails, { state: character })}
                 key={character.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 }, cursor:'pointer' }}
               >
                 <TableCell align="left"><img src={character.image} width="80px" /></TableCell>
                 <TableCell align="left">{character.name}</TableCell>

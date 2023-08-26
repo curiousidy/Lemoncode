@@ -13,7 +13,6 @@ const OrganizationProvider:FC<Props> = ({children}) => {
   
   const updateOrganization = (organization:OrganizationInterface) => {
     dispatch({type:'update',payload:organization})
-    console.log('update holi')
   }
 
   const updateOrganizationName = (organizationName:string) => {

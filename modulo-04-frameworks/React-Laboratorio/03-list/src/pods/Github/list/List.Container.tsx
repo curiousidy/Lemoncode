@@ -1,27 +1,20 @@
 import React, { useContext, useEffect } from 'react'
 import { ListComponent } from './List.Component'
-import axios from 'axios';
 import { OrganizationName } from './components/OrganizationName.Component';
 import OrganizationContext from '../../../core/context/organization/OrganizationContext';
-import SearchInput from '../../../common/SearchInput';
+
+import { getMembers } from '../api';
+import SearchInput from '../components/SearchInput';
 
 
 const ListContainer = () => {
-    const baseUrl = 'https://api.github.com/orgs/';
     const { organization, updateOrganization, updateOrganizationName } = useContext(OrganizationContext);
 
     const loadMembers = async () => {
-        try {
-            const { data } = await axios.get(`${baseUrl}${organization.organizationName}/members`)
             updateOrganization({
                 organizationName: organization.organizationName,
-                members: data
+                members: await getMembers(organization.organizationName)
             })
-
-        } catch (error) {
-            console.log(error)
-
-        }
     }
 
   useEffect(() => {

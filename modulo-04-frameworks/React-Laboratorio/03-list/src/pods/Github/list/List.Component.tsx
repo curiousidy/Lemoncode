@@ -21,7 +21,7 @@ export const ListComponent: React.FC<Props> = ({members}) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {members.map((member) => <MemberRow member={member}/>)}
+          {members.map((member) => <MemberRow key = {member.id} member={member}/>)}
         </TableBody>
       </Table>
     </TableContainer>

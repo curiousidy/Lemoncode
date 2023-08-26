@@ -1,14 +1,15 @@
 import React from "react";
 
 interface Props {
-  handleNavigation: (event) => void;
+  handleNavigation: (event: React.FormEvent<HTMLFormElement>) => void;
+  username: string;
+  password: string;
+  setUsername: (username: string) => void;
+  setPassword: (password: string) => void;
 }
 
 export const LoginComponent: React.FC<Props> = (props) => {
-  const {handleNavigation} = props;
-  
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const { handleNavigation, username, password, setUsername, setPassword } = props;
 
   return (
     <>
@@ -19,6 +20,8 @@ export const LoginComponent: React.FC<Props> = (props) => {
           <div>
             <label>Username: </label>
             <input
+              id="username"
+              type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -26,6 +29,7 @@ export const LoginComponent: React.FC<Props> = (props) => {
           <div>
             <label>Password: </label>
             <input
+              id="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

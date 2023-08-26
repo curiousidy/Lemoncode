@@ -6,7 +6,6 @@ export const DetailComponent: React.FC = () => {
   const location = useLocation();
   const member = location.state;
   const navigate = useNavigate();
-  console.log(member)
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h2>Hello from Detail page</h2>
