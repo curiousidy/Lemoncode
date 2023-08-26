@@ -1,3 +1,5 @@
+# Tasks To Clarify
+    "Adding unit tests of vue components or compostables. Add unit tests of vue components or composables". The test is performed but throws errors that I have not been able to resolve. This question is asked by slack.
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.

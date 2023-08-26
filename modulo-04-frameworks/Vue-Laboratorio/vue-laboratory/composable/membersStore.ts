@@ -15,7 +15,6 @@ export const useMembersStore = defineStore('useMembersStore', {
           this.members = members;
       },
       updateMemberOrganizations(id:number, organizations : object[]){
-          console.log('organizations', organizations)
           this.members.filter(member => member.id === id)[0].organizations = organizations
       },
 

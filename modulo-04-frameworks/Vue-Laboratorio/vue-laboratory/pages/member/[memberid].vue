@@ -35,7 +35,6 @@
       const id = Number(memberEntity.value?.id);
       membersStore.updateMemberOrganizations(id,organizations.data.value)
     }
-      console.log(membersStore.members)
 </script>
 
 <style lang='css' scoped>
