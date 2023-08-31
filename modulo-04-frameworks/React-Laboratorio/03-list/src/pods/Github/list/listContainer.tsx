@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from 'react'
-import { ListComponent } from './List.Component'
-import { OrganizationName } from './components/OrganizationName.Component';
-import OrganizationContext from '../../../core/context/organization/OrganizationContext';
+import { ListComponent } from './listComponent'
+import { OrganizationName } from './components/organizationNameComponent';
+import OrganizationContext from '../../../core/context/organization/organizationContext';
 
 import { getMembers } from '../api';
-import SearchInput from '../components/SearchInput';
+import SearchInput from '../components/searchInput';
+
+
 
 
 const ListContainer = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import RickAndMortyDetailComponent from './Detail.Component';
+import RickAndMortyDetailComponent from './detailComponent';
 
 const RickAndMortyDetailContainer = () =>  <RickAndMortyDetailComponent/>
 

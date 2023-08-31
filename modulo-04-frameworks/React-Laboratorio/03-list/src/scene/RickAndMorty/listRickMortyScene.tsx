@@ -1,5 +1,5 @@
 import React from 'react'
-import RickAndMortyListContainer from '../../pods/RickAndMorty/list/List.Container'
+import RickAndMortyListContainer from '../../pods/RickAndMorty/list/listContainer'
 
 
 const ListRickMortyScene = () => <RickAndMortyListContainer/>

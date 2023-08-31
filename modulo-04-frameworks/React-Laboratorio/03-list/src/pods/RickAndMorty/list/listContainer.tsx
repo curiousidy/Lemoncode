@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import RickAndMortyListComponent from './List.Component';
-import { CharactersInterface } from './characters.model';
+import RickAndMortyListComponent from './listComponent';
+import { CharactersInterface } from './charactersModel';
 
 import { getCharacterByName, getCharacters } from '../api';
-import SearchInput from '../components/SearchInput.rick';
+import SearchInput from '../components/searchInputRick';
 
 const RickAndMortyListContainer = () => {
     

@@ -1,7 +1,7 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { routes } from '../core/router/Routes';
+import { routes } from '../core/router/routes';
 
 const DashBoardScene = () => {
     const navigate = useNavigate();
@@ -16,4 +16,4 @@ const DashBoardScene = () => {
     )
 }
 
-    export default DashBoardScene
+export default DashBoardScene

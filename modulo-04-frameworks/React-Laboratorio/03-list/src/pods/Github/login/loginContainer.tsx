@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LoginComponent } from './Login.Component';
+import { LoginComponent } from './loginComponent';
 
 const LoginContainer: FC = () => {
   const navigate = useNavigate();

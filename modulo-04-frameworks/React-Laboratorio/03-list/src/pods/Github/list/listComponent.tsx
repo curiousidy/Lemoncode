@@ -1,7 +1,9 @@
 import React from "react";
-import MemberRow from "./components/MemberRow";
-import { MemberInterface } from "../../../core/context/organization/OrganizationContext";
+
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody } from "@mui/material";
+
+import { MemberInterface } from "../../../core/context/organization/organizationContext";
+import MemberRow from "./components/memberRow";
 
 
 interface Props {

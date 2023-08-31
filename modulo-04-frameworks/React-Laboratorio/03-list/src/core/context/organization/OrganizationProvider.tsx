@@ -1,5 +1,5 @@
 import React, { FC, useReducer } from 'react'
-import OrganizationContext, { OrganizationInterface } from './OrganizationContext';
+import OrganizationContext, { OrganizationInterface } from './organizationContext';
 import { organizationReducer } from './organizationReducer';
 interface Props {
     children: JSX.Element;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { DetailComponent } from './Detail.Component'
+import { DetailComponent } from './detailComponent'
 
 const DetailContainer = () => <DetailComponent/>
 

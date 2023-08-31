@@ -1,8 +1,9 @@
 import React, { FC, useState } from 'react'
-import { CharactersInterface } from './characters.model'
+import { CharactersInterface } from './charactersModel'
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from '@mui/material'
-import { switchRoutes } from '../../../core/router/Routes'
+import { switchRoutes } from '../../../core/router/routes'
 import { useNavigate } from 'react-router-dom'
+import CharacterRow from './components/characterRow'
 
 interface Props {
   characters: CharactersInterface[]
@@ -11,7 +12,7 @@ interface Props {
 const rowsPerPageOptions = [5, 10, 25];
 
 const RickAndMortyListComponent: FC<Props> = ({ characters }) => {
-  const navigate = useNavigate();
+  
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
@@ -44,19 +45,7 @@ const RickAndMortyListComponent: FC<Props> = ({ characters }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {displayedMembers.map((character) => (
-
-              <TableRow onClick={() => navigate(switchRoutes.rickandmortydetails, { state: character })}
-                key={character.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 }, cursor:'pointer' }}
-              >
-                <TableCell align="left"><img src={character.image} width="80px" /></TableCell>
-                <TableCell align="left">{character.name}</TableCell>
-                <TableCell align="left">{character.species}</TableCell>
-                <TableCell align="left">{character.gender}</TableCell>
-              </TableRow>
-
-            ))}
+            {displayedMembers.map((character) => <CharacterRow key={character.id} character={character}/>)}
           </TableBody>
         </Table>
       </TableContainer>

@@ -1,4 +1,4 @@
-import { OrganizationInterface } from "./OrganizationContext"
+import { OrganizationInterface } from "./organizationContext"
 
 type organizationActions = 
   | {type:'update', payload:OrganizationInterface}

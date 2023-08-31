@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { MemberInterface } from '../../../../core/context/organization/OrganizationContext'
-import { switchRoutes } from '../../../../core/router/Routes'
+import { MemberInterface } from '../../../../core/context/organization/organizationContext'
+import { switchRoutes } from '../../../../core/router/routes'
 import { TableRow, TableCell } from '@mui/material'
 
 interface Prop {

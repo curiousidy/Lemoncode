@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginContainer from '../../pods/Github/login/Login.Container'
+import LoginContainer from '../../pods/Github/login/loginContainer'
 
 const LoginScene = () => <LoginContainer/>
 
