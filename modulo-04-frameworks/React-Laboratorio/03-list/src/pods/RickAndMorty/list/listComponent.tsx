@@ -1,8 +1,6 @@
 import React, { FC, useState } from 'react'
 import { CharactersInterface } from './charactersModel'
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow } from '@mui/material'
-import { switchRoutes } from '../../../core/router/routes'
-import { useNavigate } from 'react-router-dom'
 import CharacterRow from './components/characterRow'
 
 interface Props {
