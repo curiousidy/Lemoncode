@@ -3,7 +3,7 @@ export interface Project {
   name: string;
   externalId?: string;
   comments?: string;
-  isActive: boolean;
+  Active: boolean;
   employees: EmployeeSummary[];
 }
 
