@@ -16,7 +16,7 @@ describe('Confirmation Dialog Component', () => {
         const children = <div>Mensaje de confirmación</div>;
 
         //Act
-        const {getByText, asFragment } = render(<ConfirmationDialogComponent
+        const { getByText } = render(<ConfirmationDialogComponent
             isOpen={isOpen}
             onAccept={onAccept}
             onClose={onClose}
@@ -50,7 +50,7 @@ describe('Confirmation Dialog Component', () => {
         const children = <div>Mensaje de confirmación</div>;
 
         //Act
-        const { asFragment } = render(<ConfirmationDialogComponent
+        const { baseElement } = render(<ConfirmationDialogComponent
             isOpen={isOpen}
             onAccept={onAccept}
             onClose={onClose}
@@ -58,9 +58,9 @@ describe('Confirmation Dialog Component', () => {
             labels={labels}
             children={children}
         />)
-        console.log(asFragment());
+       
         //Assert
-       expect(asFragment()).toMatchSnapshot();
+       expect(baseElement).toMatchSnapshot();
         
     })
 })
