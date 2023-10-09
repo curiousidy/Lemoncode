@@ -1,0 +1,17 @@
+name: CI workflow
+
+on:
+  push:
+    branches:
+      - feature/laboratorio-testing-opcional
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 
+      - name: Install
+        run: npm install
+      - name: Tests
+        run: npm run test
